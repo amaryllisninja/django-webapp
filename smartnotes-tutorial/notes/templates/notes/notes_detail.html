@@ -1,6 +1,7 @@
-<html>
-    <h1>{{note.title}}</h1>
+{% extends "base.html" %}
 
-    <p>{{note.text}}</p>
+{% block content %}
+<h1>{{note.title}}</h1>
 
-</html>
+<p>{{note.text}}</p>
+{% endblock  %}
