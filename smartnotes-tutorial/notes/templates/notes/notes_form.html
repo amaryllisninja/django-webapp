@@ -5,7 +5,10 @@
 <form action="{% url 'notes.new' %}" method='POST'>
     {% csrf_token %}
     {{ form }}
-    <button type="submit" class="button-primary">SUBMIT</button>
+    <button type="submit" class="btn btn-primary my-5">SUBMIT</button>
 </form>
+{% if form.errors %}
+<div class="alert alert-danger my-5">{{form.errors.title}}</div>
+{% endif %}
 
 {% endblock %}
