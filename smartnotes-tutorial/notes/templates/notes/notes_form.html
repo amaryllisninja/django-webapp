@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="{% url 'notes.new' %}" method='POST'>
+<form method='POST'>
     {% csrf_token %}
     {{ form }}
     <button type="submit" class="btn btn-primary my-5">SUBMIT</button>
@@ -10,5 +10,6 @@
 {% if form.errors %}
 <div class="alert alert-danger my-5">{{form.errors.title}}</div>
 {% endif %}
+<a href={% url 'notes.list' %} class="btn btn-secondary">Cancel</a>
 
 {% endblock %}
